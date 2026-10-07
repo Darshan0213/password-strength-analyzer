@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.container {
+    background-color: white;
+    width: 400px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.strength {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.alert {
+    font-weight: bold;
+}
+
+ul {
+    text-align: left;
+}

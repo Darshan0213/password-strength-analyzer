@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password Strength Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Password Strength Analyzer</h1>
+
+        <p class="subtitle">
+            Check how strong your password is
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="button" onclick="showPassword()">
+                👁️ Show Password
+            </button>
+
+            <br><br>
+
+            <button type="submit">
+                Check Strength
+            </button>
+
+        </form>
+
+
+        {% if strength %}
+
+            <h2>Password Strength</h2>
+
+            <div class="strength">
+                {{ strength }}
+            </div>
+
+        {% endif %}
+
+
+        {% if alert %}
+
+            <p class="alert">
+                {{ alert }}
+            </p>
+
+        {% endif %}
+
+
+        {% if common_password %}
+
+            <p class="alert">
+                {{ common_password }}
+            </p>
+
+        {% endif %}
+
+
+        {% if suggestions %}
+
+            <h3>Suggestions</h3>
+
+            <ul>
+
+                {% for suggestion in suggestions %}
+
+                    <li>{{ suggestion }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% endif %}
+
+    </div>
+
+
+    <script>
+
+        function showPassword() {
+
+            var password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
